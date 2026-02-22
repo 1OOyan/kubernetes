@@ -1,7 +1,7 @@
 apache:
   image:
     repository: bitnami/apache
-    tag: 2.4.65 
+    tag: latest 
   # This section injects your MariaDB connection info into the PHP app
   containerEnv:
     - name: DB_HOST
