@@ -20,7 +20,7 @@ spec:
       ports:
       - containerPort: 3306
       env:
-      - name: MARIADB_ROOT_PASSWORD
+      - name: root 
         value: "root" # In production, use a Secret
       - name: MARIADB_DATABASE
-        value: "my_database"
+        value: "mydb"
