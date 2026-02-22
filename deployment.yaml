@@ -24,3 +24,10 @@ spec:
           value: "mypassword123"
         - name: MARIADB_DATABASE
           value: "testdb"
+        volumeMounts:
+        - name: mariadb-storage
+          mountPath: /var/lib/mysql # This is where MariaDB saves data
+      volumes:
+      - name: mariadb-storage
+        persistentVolumeClaim:
+          claimName: mariadb-pvc # This must match the name in pvc.yaml
