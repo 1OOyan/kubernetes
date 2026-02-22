@@ -1,0 +1,16 @@
+apache:
+  image:
+    repository: bitnami/apache
+    tag: latest
+  # This section injects your MariaDB connection info into the PHP app
+  containerEnv:
+    - name: DB_HOST
+      value: "mariadb-service" # This matches the Service name you created earlier
+    - name: DB_USER
+      value: "root"
+    - name: DB_PASSWORD
+      value: "mypassword123"
+  service:
+    type: NodePort
+    nodePorts:
+      http: 30080

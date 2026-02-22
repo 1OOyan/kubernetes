@@ -1,0 +1,9 @@
+apiVersion: v2
+name: web-app
+description: PHP frontend for my MariaDB
+type: application
+version: 1.0.0
+dependencies:
+  - name: apache
+    version: 11.x.x
+    repository: https://charts.bitnami.com/bitnami
