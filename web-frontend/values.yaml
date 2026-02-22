@@ -14,3 +14,5 @@ apache:
     type: NodePort
     nodePorts:
       http: 30080
+  networkPolicy:
+    enabled: false
