@@ -8,19 +8,19 @@ spec:
   replicas: 1
   selector:
     matchLabels:
-      app: mariadb
+      app: mariadb # This MUST match the template label below
   template:
     metadata:
       labels:
         app: mariadb
-  spec:
-    containers:
-    - name: mariadb
-      image: mariadb:latest # Pulls from Docker Hub
-      ports:
-      - containerPort: 3306
-      env:
-      - name: root 
-        value: "root" # In production, use a Secret
-      - name: MARIADB_DATABASE
-        value: "mydb"
+    spec:
+      containers:
+      - name: mariadb
+        image: mariadb:10.11 # Using a specific version is safer than 'latest'
+        ports:
+        - containerPort: 3306
+        env:
+        - name: MARIADB_ROOT_PASSWORD
+          value: "mypassword123"
+        - name: MARIADB_DATABASE
+          value: "testdb"
