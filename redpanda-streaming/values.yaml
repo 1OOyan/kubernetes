@@ -1,0 +1,14 @@
+redpanda:
+  # Disables hardware optimization checks that fail in Minikube
+  tuning:
+    tune_aio_events: false
+  # Runs only 1 broker (instead of the usual 3) to save RAM
+  statefulset:
+    replicas: 1
+  # Disables internal TLS for easier local testing
+  tls:
+    enabled: false
+  # Request minimal resources for local dev
+  resources:
+    cpu: 500m
+    memory: 1Gi

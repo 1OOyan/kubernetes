@@ -1,0 +1,9 @@
+apiVersion: v2
+name: redpanda-streaming
+description: Redpanda for my LAMP stack
+type: application
+version: 1.0.0
+dependencies:
+  - name: redpanda
+    version: 5.x.x
+    repository: https://charts.redpanda.com
